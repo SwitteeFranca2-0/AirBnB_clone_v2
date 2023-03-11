@@ -17,12 +17,12 @@ def do_deploy(archive_path):
         dir = '/data/web_static/releases/' + file[:-4]
         run('sudo mkdir -p {}'.format(dir))
         archive = '/tmp/' + file
-        run('sudo tar -xvf {} -C {}'.format(archive, dir))
-        run('sudo rm {}'.format(archive))
-        run('sudo mv {0}/web_static/* {0}'.format(dir))
-        run('sudo rm -rf {}/web_static'.format(dir))
-        run('sudo rm -rf /data/web_static/current')
-        run('sudo ln -sf {} /data/web_static/current'.format(dir))
+        run('tar -xvf {} -C {}'.format(archive, dir))
+        run('rm {}'.format(archive))
+        run('mv {0}/web_static/* {0}'.format(dir))
+        run('rm -rf {}/web_static'.format(dir))
+        run('rm -rf /data/web_static/current')
+        run('ln -sf {} /data/web_static/current'.format(dir))
         return True
     except Exception:
         return False
