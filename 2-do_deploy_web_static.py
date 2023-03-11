@@ -3,9 +3,7 @@
 
 from fabric.api import run, put, env, local
 from os.path import exists
-env.hosts = ['ubuntu@100.25.211.145', 'ubuntu@52.3.249.150']
-env.user = 'ubuntu'
-
+env.hosts = ['<IP web-01>', 'IP web-02']
 
 def do_deploy(archive_path):
     """Distribute the archive to the webservers"""
