@@ -5,8 +5,8 @@ from fabric.api import run, local, env, put
 from os.path import exists, isdir
 from datetime import datetime
 
-env.hosts = ['ubuntu@100.25.211.145', 'ubuntu@52.3.249.150']
-env.user = 'ubuntu'
+env.hosts = ['ubuntu@100.25.211.145']
+env.users = 'ubuntu'
 
 do_pack = __import__('1-pack_web_static').do_pack
 do_send = __import__('2-do_deploy_web_static').do_deploy
